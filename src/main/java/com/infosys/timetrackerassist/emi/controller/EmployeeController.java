@@ -37,7 +37,7 @@ public class EmployeeController {
     @PutMapping("/{id}")
     public void updateEmployee(@PathVariable int id, @RequestBody Employee employee) {
         if (employee.getEmpId()!=(id)) {
-            throw new IllegalStateException("Given ingredient's ID doesn't match the ID in the path.");
+            throw new IllegalStateException("Given employee's ID doesn't match the ID in the path.");
         }
         repo.save(employee);
     }
