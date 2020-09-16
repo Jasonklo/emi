@@ -15,9 +15,9 @@ import java.sql.Timestamp;
 public class Group {
 
     @Id
-    char groupId;
-    private char groupName;
-    private int maintId;
+    private Character groupId;
+    private Character groupName;
+    private Integer maintId;
     private Timestamp maintTs;
 
 
