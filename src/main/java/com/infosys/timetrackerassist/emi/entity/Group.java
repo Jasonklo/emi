@@ -8,6 +8,7 @@ import javax.persistence.*;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.util.List;
 
 @Data
 @Entity
@@ -19,6 +20,9 @@ public class Group implements Serializable {
     private Character groupName;
     private Integer maintId;
     private Timestamp maintTs;
+
+    @OneToMany(mappedBy = "group")
+    private List<Employee> employees;
 
 
 }
