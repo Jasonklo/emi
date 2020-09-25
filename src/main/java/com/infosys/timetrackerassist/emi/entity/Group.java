@@ -16,12 +16,13 @@ import java.util.List;
 public class Group implements Serializable {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Character groupId;
     private Character groupName;
     private Integer maintId;
     private Timestamp maintTs;
 
-    @OneToMany(mappedBy = "group")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "group")
     private List<Employee> employees;
 
 

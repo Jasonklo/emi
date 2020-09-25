@@ -29,6 +29,16 @@ public class EmployeeController {
         return repo.findAll();
     }
 
+    @GetMapping("/admin")
+    public Optional<Employee> admin(@PathVariable int id, @RequestBody Employee.Access access) {
+        if (access.toString() != "A") {
+            throw new IllegalStateException("Given employee's ID is not admin.");
+        } else {
+            return repo.findById(id);
+        }
+
+    }
+
     @GetMapping("/{id}")
     public Optional<Employee> byId(@PathVariable int id) {
         return repo.findById(id);
